@@ -28,3 +28,18 @@ PRODUCT_PACKAGES += \
     
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 33
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := $(if $(filter 30,$(BOARD_SYSTEMSDK_VERSIONS)),30,32)
+
+# Soong
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.system.model \
+    ro.product.vendor.model \
+    ro.product.odm.model \
+    ro.product.model \
+    ro.product.product.model \
+    ro.product.system_ext.model
