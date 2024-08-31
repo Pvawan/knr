@@ -42,7 +42,6 @@
 /vbmeta_samsung  emmc   /dev/block/platform/bootdevice/by-name/vbmeta_samsung     flags=display="VBMeta_samsung";backup=1;flashimg=1;
 /super                        emmc     /dev/block/platform/bootdevice/by-name/super                         flags=display="Super";backup=1;flashimg=1;
 
-# added by johnny
 # mount point       fstype    device                                                           flags
 
 /system_image          emmc  /dev/block/mapper/system  flags=backup=1;flashimg=1;display="System Image";logical
