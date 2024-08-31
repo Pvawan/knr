@@ -46,15 +46,10 @@
 # mount point       fstype    device                                                           flags
 
 /system_image          emmc  /dev/block/mapper/system  flags=backup=1;flashimg=1;display="System Image";logical
-
 /vendor_image             emmc  /dev/block/mapper/vendor  flags=backup=1;flashimg=1;display="Vendor Image";logical 
-
 /product_image           emmc  /dev/block/mapper/product  flags=backup=1;flashimg=1;display="Product Image";logical 
-
 /system_ext_image    emmc   /dev/block/mapper/system_ext  flags=backup=1;flashimg=1;display="System_ext Image";logical 
-
 /odm_image                  emmc  /dev/block/mapper/odm  flags=backup=1;flashimg=1;display="Odm Image";logical 
-
 #
 /nvram        emmc     /dev/block/platform/bootdevice/by-name/nvram     flags=display="NVRAM";backup=1;
 /nvcfg        emmc     /dev/block/platform/bootdevice/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
