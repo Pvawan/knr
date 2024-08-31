@@ -1,0 +1,68 @@
+/system             erofs     system                                                    flags=display=system;logical
+/system             f2fs      system                                                    flags=display=system;logical
+/system             ext4      system                                                    flags=display=system;logical
+/system_ext         ext4    system_ext                              flags=display=system_ext;logical 
+/vendor             ext4     vendor                                                    flags=display=vendor;logical
+/product            ext4     product                                                   flags=display=product;logical
+/odm                ext4     odm                                                       flags=display=odm;logical
+/system             emmc      system                                                    flags=display=system;logical;backup=1;
+/system_ext         emmc    system_ext                              flags=display=system_ext;logical;backup=1;
+/vendor             emmc     vendor                                                    flags=display=vendor;logical;backup=1;
+/product            emmc     product                                                   flags=display=product;logical;backup=1;
+/odm                emmc     odm                                                       flags=display=odm;logical;backup=1;
+/boot             emmc         /dev/block/platform/bootdevice/by-name/boot      flags=backup=1;display="Boot";flashimg=1;
+/recovery     emmc     /dev/block/platform/bootdevice/by-name/recovery  flags=backup=1;display="Recovery";flashimg=1;
+/data               f2fs        /dev/block/platform/bootdevice/by-name/userdata           flags=backup=1;display=data
+/cache        ext4          /dev/block/platform/bootdevice/by-name/cache     flags=backup=0;display="Cache";
+/efs              ext4                /dev/block/platform/bootdevice/by-name/sec_efs   flags=backup=1;display="EFS";
+/carrier            ext4      /dev/block/platform/bootdevice/by-name/carrier            flags=backup=1;display=carrier; 
+/carrier            emmc      /dev/block/platform/bootdevice/by-name/carrier            flags=backup=1;display=carrier; 
+# /preload            ext4      /dev/block/platform/bootdevice/by-name/hidden             flags=backup=1;display=preload
+/misc               emmc      /dev/block/platform/bootdevice/by-name/misc               flags=backup=1;display=misc;
+/metadata           ext4      /dev/block/platform/bootdevice/by-name/metadata           flags=backup=1;display=metadata
+# /sdcard             sdfat     /dev/block/mmcblk1p1                                                             flags=display=sdcard
+/modem              emmc      /dev/block/platform/bootdevice/by-name/apnhlos            flags=display=modem
+/mdm                emmc      /dev/block/platform/bootdevice/by-name/modem              flags=display=mdm
+/dsp                emmc      /dev/block/platform/bootdevice/by-name/dsp                flags=display=dsp
+/dtbo               emmc      /dev/block/platform/bootdevice/by-name/dtbo               flags=display=dtbo
+/md1img             emmc      /dev/block/platform/bootdevice/by-name/md1img             flags=display=md1img
+/spmfw              emmc      /dev/block/platform/bootdevice/by-name/spmfw              flags=display=spmfw
+/scp1               emmc      /dev/block/platform/bootdevice/by-name/scp1               flags=display=scp1
+/sspm_1             emmc      /dev/block/platform/bootdevice/by-name/sspm_1             flags=display=sspm_1
+# /keydata            ext4      /dev/block/platform/bootdevice/by-name/keydata            flags=display=keydata
+# /keyrefuge          f2fs      /dev/block/platform/bootdevice/by-name/keyrefuge          flags=display=keyrefuge
+/gz1                emmc      /dev/block/platform/bootdevice/by-name/gz1                flags=display=gz1
+/optics       ext4     /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg=1;display="Optics";
+/optics       emmc     /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg=1;display="Optics";
+/prism        ext4     /dev/block/platform/bootdevice/by-name/prism     flags=backup=1;flashimg=1;display="Prism";
+/cam_vpu1           emmc      /dev/block/platform/bootdevice/by-name/cam_vpu1           flags=display=cam_vpu1
+/cam_vpu2           emmc      /dev/block/platform/bootdevice/by-name/cam_vpu2           flags=display=cam_vpu2
+/cam_vpu3           emmc      /dev/block/platform/bootdevice/by-name/cam_vpu3           flags=display=cam_vpu3
+/pi_img             emmc      /dev/block/platform/bootdevice/by-name/pi_img             flags=display=pi_img
+/vbmeta_samsung  emmc   /dev/block/platform/bootdevice/by-name/vbmeta_samsung     flags=display="VBMeta_samsung";backup=1;flashimg=1;
+/super                        emmc     /dev/block/platform/bootdevice/by-name/super                         flags=display="Super";backup=1;flashimg=1;
+
+# added by johnny
+# mount point       fstype    device                                                           flags
+
+/system_image          emmc  /dev/block/mapper/system  flags=backup=1;flashimg=1;display="System Image";logical
+
+/vendor_image             emmc  /dev/block/mapper/vendor  flags=backup=1;flashimg=1;display="Vendor Image";logical 
+
+/product_image           emmc  /dev/block/mapper/product  flags=backup=1;flashimg=1;display="Product Image";logical 
+
+/system_ext_image    emmc   /dev/block/mapper/system_ext  flags=backup=1;flashimg=1;display="System_ext Image";logical 
+
+/odm_image                  emmc  /dev/block/mapper/odm  flags=backup=1;flashimg=1;display="Odm Image";logical 
+
+#
+/nvram        emmc     /dev/block/platform/bootdevice/by-name/nvram     flags=display="NVRAM";backup=1;
+/nvcfg        emmc     /dev/block/platform/bootdevice/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
+/nvdata       emmc     /dev/block/platform/bootdevice/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
+
+# SD Card & USB-OTG Points
+/sdcard1            vfat      /dev/block/mmcblk0p1         /dev/block/mmcblk0                       flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
+/usb_otg            vfat      /dev/block/sdd1              /dev/block/sdd                           flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable;
+
+## Internal storage (for OrangeFox)
+/storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;
