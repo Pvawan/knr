@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       DOWNLOAD_URL:
-        description: "Direct download link of the recovery image"
+        description: "Direct download link of the recovery/boot/vendor_boot image"
         required: true
         default: ''
       EXTRA_NOTE:
