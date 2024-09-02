@@ -48,5 +48,3 @@ jobs:
           body: |
             Please test it and report the results!
             Extra note: ${{ github.event.inputs.EXTRA_NOTE }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GTOKEN }}
