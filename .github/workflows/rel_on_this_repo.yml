@@ -1,0 +1,52 @@
+name: Release Recovery
+
+on: 
+  workflow_dispatch:
+    inputs:
+      DOWNLOAD_URL:
+        description: "Direct download link of the recovery/boot/vendor_boot image"
+        required: true
+        default: ''
+      EXTRA_NOTE:
+        description: "An extra text to add to the release notes (optional)"
+        required: false
+        default: ''
+
+jobs:
+  rel-recovery:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Perform general operations
+        id: perform-all
+        run: |
+          cd /home
+          sudo mkdir workdir \
+          && sudo chmod 777 workdir \
+          && cd workdir
+          sudo apt update \
+          && sudo apt install tar aria2
+          sudo aria2c "${{ github.event.inputs.DOWNLOAD_URL }}"
+          FNAME=$(basename *)
+          TARGET_FNAME=$(echo "${FNAME}" | rev | cut -d. -f2- | rev)
+          tar -H ustar -c "${FNAME}" > "${TARGET_FNAME}.tar"
+          md5sum -b -t "${TARGET_FNAME}.tar" >> "${TARGET_FNAME}.tar"
+          mv "${TARGET_FNAME}.tar" "${TARGET_FNAME}.tar.md5" 
+
+      - name: Upload package
+        id: upload-to-rels
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            /home/workdir/*.tar.md5
+            /home/workdir/*.img
+          name: Galaxy A34 TWRP Release - ${{ github.run_id }}
+          tag_name: ${{ github.run_id }}
+          body: |
+            Please test it and report the results!
+            Extra note: ${{ github.event.inputs.EXTRA_NOTE }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GTOKEN }}
