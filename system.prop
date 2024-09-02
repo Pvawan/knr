@@ -2,15 +2,8 @@ ro.display.series=Samsung Galaxy A34 5G
 ro.boot.dynamic_partitions=true
 sys.usb.config=mtp
 ro.hardware=mt6877
-# Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
-
-# Gatekeeper
 ro.hardware.gatekeeper=beanpod
-
-# Keymaster
 ro.hardware.kmsetkey=beanpod
-
-# TEE
 ro.vendor.mtk_microtrust_tee_support=1
 ro.vendor.mtk_tee_gp_support=1
