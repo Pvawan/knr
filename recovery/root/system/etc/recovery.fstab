@@ -21,8 +21,6 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 
 /dev/block/by-name/userdata	/data	f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,whint_mode=fs-based,inlinecrypt	wait,check,,quota,reservedsize=128M,latemount,,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
 
-
-
 #/dev/block/by-name/protect1	/mnt/vendor/protect_f	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
 #/dev/block/by-name/protect2	/mnt/vendor/protect_s	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
 #/dev/block/by-name/nvdata	/mnt/vendor/nvdata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
@@ -32,15 +30,7 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 /dev/block/by-name/prism /prism ext4 ro,barrier=1 nofail,avb,first_stage_mount
 /dev/block/by-name/optics /optics ext4 ro,barrier=1 nofail,avb,first_stage_mount
 
-
-
-
-
 #/dev/block/by-name/efs	/mnt/vendor/efs	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
-
-
-
-
 
 /dev/block/by-name/frp /persistent emmc defaults defaults
 
@@ -51,14 +41,9 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 /dev/block/by-name/para /para emmc defaults defaults
 /dev/block/by-name/misc	/misc	emmc	defaults	defaults,first_stage_mount
 
-
 /dev/block/by-name/recovery /recovery emmc defaults first_stage_mount,nofail,
 
 /dev/block/by-name/boot /boot emmc defaults first_stage_mount,nofail,
-
-
-
-
 
 /dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults first_stage_mount,nofail,
 /dev/block/by-name/vbmeta_system /vbmeta_system emmc defaults first_stage_mount,nofail,,avb=vbmeta
@@ -73,22 +58,17 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 
 /dev/block/by-name/tzar /tzar emmc defaults defaults
 
-
 /dev/block/by-name/scp1 /scp1 emmc defaults defaults
 /dev/block/by-name/scp2 /scp2 emmc defaults defaults
 
-
 /dev/block/by-name/sspm_1 /sspm_1 emmc defaults defaults
 /dev/block/by-name/sspm_2 /sspm_2 emmc defaults defaults
-
 
 /dev/block/by-name/dpm_1 /dpm_1 emmc defaults defaults
 /dev/block/by-name/dpm_2 /dpm_2 emmc defaults defaults
 
 /dev/block/by-name/mcupm_1 /mcupm_1 emmc defaults defaults
 /dev/block/by-name/mcupm_2 /mcupm_2 emmc defaults defaults
-
-
 
 /dev/block/by-name/md1img /md1img emmc defaults defaults
 /dev/block/by-name/md1dsp /md1dsp emmc defaults defaults
@@ -104,10 +84,6 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 
 /dev/block/by-name/spmfw /spmfw emmc defaults defaults
 
-
-
-
-
 /dev/block/by-name/audio_dsp /audio_dsp emmc defaults defaults
 
 /dev/block/by-name/pi_img /pi_img emmc defaults defaults
@@ -116,6 +92,5 @@ odm	/odm	erofs	ro	wait,,avb,logical,first_stage_mount
 /dev/block/by-name/dtbo /dtbo emmc defaults defaults
 
 /dev/block/by-name/otp /otp emmc defaults defaults
-
 
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
