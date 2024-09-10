@@ -142,7 +142,6 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_HAS_DOWNLOAD_MODE := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone39/temp"
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP := true
@@ -153,9 +152,16 @@ TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_INCLUDE_REPACKTOOLS := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+
+# Resolution 
 TARGET _SCREEN_WIDTH := 1080 
 TARGET_SCREEN_HEIGHT:= 2340
 
-
 # Battery correct percentage
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/capacity
+
+# Temperature 
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone39/temp"
+
+# touchscreen
+TW_LOAD_VENDOR_MODULES := "goodix_ts.ko"
