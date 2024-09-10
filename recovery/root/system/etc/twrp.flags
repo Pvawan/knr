@@ -7,16 +7,16 @@
 
 # physical partitions for backup and flashing
 /metadata	ext4		/dev/block/by-name/metadata		flags=backup=1;wipeingui;display="Metadata"
-/boot		emmc		/dev/block/by-name/boot		flags=backup=1;flashimg;display="Boot"
-/recovery	emmc		/dev/block/by-name/recovery		flags=backup=1;flashimg;display="Recovery"
+/boot		emmc		/dev/block/by-name/boot		flags=backup=1;flashimg=1;display="Boot"
+/recovery	emmc		/dev/block/by-name/recovery		flags=backup=1;flashimg=1;display="Recovery"
 /data		f2fs		/dev/block/by-name/userdata		flags=length=-20480
 /dtbo		emmc		/dev/block/by-name/dtbo		flags=backup=1;flashimg;display="Dtbo"
-/up_param	emmc		/dev/block/by-name/up_param		flags=backup=1;display="Param"
-/optics_image	emmc		/dev/block/by-name/optics		flags=backup=1;flashimg;display="Optics Image"
-/prism_image	emmc		/dev/block/by-name/prism		flags=backup=1;flashimg;display="Prism Image"
+/up_param	emmc		/dev/block/by-name/up_param		flags=backup=1;flashimg=1;display="Param"
+/optics_image	emmc		/dev/block/by-name/optics		flags=backup=1;flashimg=1;display="Optics Image"
+/prism_image	emmc		/dev/block/by-name/prism		flags=backup=1;flashimg=1;display="Prism Image"
 /vbmeta_system	emmc		/dev/block/by-name/vbmeta_system
-/init_boot	emmc            /dev/block/by-name/init_boot		flags=backup=1;flashimg;display="Init Boot"
-/vendor_boot	emmc		/dev/block/by-name/vendor_boot	flags=backup=1;flashimg;display="Vendor Boot"
+/init_boot	emmc            /dev/block/by-name/init_boot		flags=backup=1;flashimg=1;display="Init Boot"
+/vendor_boot	emmc		/dev/block/by-name/vendor_boot	flags=backup=1;flashimg=1;display="Vendor Boot"
 /vbmeta_samsung	emmc		/dev/block/by-name/vbmeta_samsung
 /cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache"
 
