@@ -36,11 +36,6 @@
 /product_image           emmc  /dev/block/mapper/product  flags=backup=1;flashimg=1;display="Product Image";
 /system_ext_image    emmc   /dev/block/mapper/system_ext  flags=backup=1;flashimg=1;display="System_ext Image";
 /odm_image                  emmc  /dev/block/mapper/odm  flags=backup=1;flashimg=1;display="Odm Image";
-#
-/nvram        emmc     /dev/block/platform/bootdevice/by-name/nvram     flags=display="NVRAM";backup=1;
-/nvcfg        emmc     /dev/block/platform/bootdevice/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
-/nvdata       emmc     /dev/block/platform/bootdevice/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
-
 # SD Card & USB-OTG Points
 /external_sd            vfat      /dev/block/mmcblk0p1         /dev/block/mmcblk0                       flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
 /usb_otg            vfat      /dev/block/sdd1              /dev/block/sdd                           flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable;
