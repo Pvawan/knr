@@ -45,7 +45,7 @@ TARGET_SCREEN_DENSITY := 450
 # Asseet
 TARGET_OTA_ASSERT_DEVICE := a34x
 
-# Kernel
+#  Recovery image
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive bootopt=64S3,32N2,64N2 loop.max_part=7
